@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @LagouController
-@Security({"lisi"})
+@Security({"wangwu"})
 @LagouRequestMapping("/demo2")
 public class DemoQuanxianController {
 
@@ -28,6 +28,19 @@ public class DemoQuanxianController {
      */
     @LagouRequestMapping("/query")
     public String query(HttpServletRequest request, HttpServletResponse response,String name) {
+        return demoService.get(name);
+    }
+
+
+    /**
+     * URL: /demo/query?name=lisi
+     * @param request
+     * @param response
+     * @param name
+     * @return
+     */
+    @LagouRequestMapping("/query2")
+    public String query2(HttpServletRequest request, HttpServletResponse response,String name) {
         return demoService.get(name);
     }
 }
